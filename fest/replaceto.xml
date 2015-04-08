@@ -1,0 +1,17 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+
+<div class="replaceto">
+	<div class="replaceto__status">
+		<input type="checkbox" class="js-status-checkbox" />
+		<fest:space />
+		<span class="js-status-label"></span>
+	</div>
+	<div class="replaceto__url">
+		<input class="js-url-input replaceto__url__input" type="text" placeholder="Example URL" />
+		<span class="js-url-result replaceto__url__result"></span>
+	</div>
+	<div class="replaceto__header">Правила</div>
+	<div class="js-list replaceto__list"></div>
+</div>
+
+</fest:template>

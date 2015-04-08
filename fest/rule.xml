@@ -1,0 +1,14 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+
+<div class="js-item rule">
+	<div class="js-item-delete rule__delete">&amp;cross;</div>
+	<div class="js-item-match rule__item">
+		<input class="js-input-match rule__item__input" type="text" placeholder="Match" />
+	</div>
+	<div class="js-item-replace rule__item">
+		<input class="js-input-replace rule__item__input" type="text" placeholder="Replace" />
+	</div>
+</div>
+
+
+</fest:template>

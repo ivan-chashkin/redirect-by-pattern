@@ -1,0 +1,17 @@
+{
+  "name": "RedirectTo",
+  "version": "1.0.0",
+  "description": "Extension for web developers",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Chashkin",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-fest": "^0.1.5"
+  }
+}
