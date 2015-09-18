@@ -2,13 +2,26 @@
 
 <div class="replaceto">
 	<div class="replaceto__status">
-		<input type="checkbox" class="js-status-checkbox" />
-		<fest:space />
-		<span class="js-status-label"></span>
+		<span class="js-status-label replaceto__status__current"></span>
+		<label>
+			<input type="checkbox" class="js-status-checkbox replaceto__status__checkbox" />
+			<span class="js-status-button replaceto__status__button"></span>
+		</label>
 	</div>
 	<div class="replaceto__url">
 		<input class="js-url-input replaceto__url__input" type="text" placeholder="Example URL" />
 		<span class="js-url-result replaceto__url__result"></span>
+	</div>
+	<div class="replaceto__help">
+		<div class="js-help-button replaceto__help__link">Примеры использования</div>
+		<div class="js-help-body replaceto__help__body" style="display: none;">
+			<p>Блок сверху для проверки правил.<br />Блоки снизу, список правил для замены, зеленым выделяется первое подошедшее правило для URL указанного сверху.<br />Match парсятся RegExp</p>
+			<h4>Примеры использования:</h4>
+			<p><span class="example example_header">Match:</span><fest:space /><span class="example example_match">https://mail.ru/<strong>(.*)</strong></span><br />
+			<span class="example example_header">Replace:</span><fest:space /><span class="example example_replace">https://localhost/<strong>$1</strong></span></p>
+			<p><span class="example example_header">Match:</span><fest:space /><span class="example example_match">https://mail.ru/<strong>(js|css)</strong>/<strong>(.*)</strong></span><br />
+			<span class="example example_header">Replace:</span><fest:space /><span class="example example_replace">https://<strong>$1</strong>.localhost/<strong>$2</strong></span></p>
+		</div>
 	</div>
 	<div class="replaceto__header">Правила</div>
 	<div class="js-list replaceto__list"></div>

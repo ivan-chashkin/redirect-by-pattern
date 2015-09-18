@@ -11,11 +11,12 @@ define([
 		template: tpl,
 		events: {
 			'change .js-status-checkbox': '_stateCheckbox',
+			'click .js-help-button': '_toggleHelp',
 			'input .js-url-input, change .js-url-input': '_updateUrl'
 		},
 		_ruleViews: [],
 		initialize: function(params) {
-			_.bindAll(this, '_stateCheckbox');
+			_.bindAll(this, '_stateCheckbox', '_toggleHelp');
 
 			this.prefix = params.prefix;
 			this.rules = new ( Rules.extend({
@@ -48,6 +49,8 @@ define([
 
 			this.$jsStatusCheckbox = this.$el.find('.js-status-checkbox');
 			this.$jsStatusLabel = this.$el.find('.js-status-label');
+			this.$jsStatusButton = this.$el.find('.js-status-button');
+			this.$jsHelpBody = this.$el.find('.js-help-body');
 			this.$jsUrlInput = this.$el.find('.js-url-input');
 			this.$jsUrlResult = this.$el.find('.js-url-result');
 			this.$jsList = this.$el.find('.js-list');
@@ -57,6 +60,13 @@ define([
 
 		_stateCheckbox: function(evt) {
 			this.setState(evt.target.checked);
+
+			_gaq.push(['_trackEvent', 'redirect-by-pattern', 'toggleState']);
+		},
+		_toggleHelp: function(evt) {
+			this.$jsHelpBody.toggle();
+
+			_gaq.push(['_trackEvent', 'redirect-by-pattern', 'toggleHelp']);
 		},
 		setState: function(state) {
 			this._state = !!state;
@@ -65,6 +75,13 @@ define([
 
 			this.$jsStatusCheckbox.prop('checked', this._state);
 			this.$jsStatusLabel.html(this._state?'Включено':'Выключено');
+			this.$jsStatusButton.html(this._state?'Выключить':'Включить');
+
+			try {
+				chrome.browserAction.setIcon({
+					path: 'images/icon38'+(this._state?'on':'off')+'.png'
+				});
+			} catch(ex) {}
 		},
 
 		_updateUrl: function() {

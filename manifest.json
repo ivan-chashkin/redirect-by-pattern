@@ -3,7 +3,7 @@
 
 	"name": "Redirect by pattern",
 	"description": "Set pattern and redirect any request. Best for developer.",
-	"version": "1.0",
+	"version": "1.1",
 
 	"browser_action": {
 		"default_icon": {
@@ -26,5 +26,6 @@
 	],
 	"background": {
 		"scripts": ["js/libs/jquery-2.0.3.min.js", "js/libs/underscore.js", "js/libs/backbone.js", "js/libs/require.js", "background.js"]
-	}
+	},
+	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }

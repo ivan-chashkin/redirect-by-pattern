@@ -16,7 +16,7 @@ require([
 		rules.fetch();
 	}, 500) );
 });
-
+var prevState = undefined;
 var onBeforeRequestListeners = [function(details){
 	
 	var 

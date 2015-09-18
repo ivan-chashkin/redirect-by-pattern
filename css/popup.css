@@ -24,6 +24,23 @@ html, body{
 	display: block;
 }
 
+.replaceto__status{
+	margin: 0px 0px 10px 0px;
+}
+.replaceto__status__checkbox{
+	display: none;
+}
+.replaceto__status__current{
+	font-size: 15px;
+	margin-right: 10px;
+}
+.replaceto__status__button{
+	border: 1px solid gray;
+	cursor: pointer;
+	padding: 1px 2px;
+	border-radius: 2px;
+}
+
 
 .replaceto__header{
 	margin: 15px 0px 5px 0px;
@@ -67,4 +84,33 @@ html, body{
 .rule__item__input{
 	width: 100%;
 	box-sizing:border-box;
+}
+
+.example{
+	font-family: monospace;
+}
+.example_header{
+	display: inline-block;
+	font-weight: bold;
+	width: 12ex;
+}
+
+.example_match{
+	background: #FBFB7F;
+}
+.example_replace{
+	background: #96F196;
+}
+
+.replaceto__help{
+	margin: 5px 0px 5px 0px;
+}
+.replaceto__help__link{
+	display: inline;
+	cursor: pointer;
+	text-decoration: underline;
+	color: blue;
+}
+.replaceto__help__body{
+
 }
