@@ -3,7 +3,7 @@
 
 	"name": "Redirect by pattern",
 	"description": "Set pattern and redirect any request. Best for developer.",
-	"version": "1.1",
+	"version": "1.2",
 
 	"browser_action": {
 		"default_icon": {
